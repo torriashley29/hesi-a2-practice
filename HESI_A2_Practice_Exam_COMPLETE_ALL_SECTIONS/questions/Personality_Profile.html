@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personality Profile - Practice</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h2>Personality Profile - Practice Questions</h2>
+    <div id="quiz-container"></div>
+    <button onclick="showSummary()">Finish Survey</button>
+    <div id="results"></div>
+    <a href="../index.html">Back to Home</a>
+<script>
+const questions = [{"question": "When faced with a problem, I tend to:", "choices": ["Act quickly", "Think it through", "Ask for advice", "Avoid it"], "answer": null}, {"question": "In group settings, I prefer to:", "choices": ["Lead the group", "Support quietly", "Observe only", "Let others decide"], "answer": null}, {"question": "I feel most productive when I:", "choices": ["Have a detailed plan", "Can be spontaneous", "Work in a team", "Work alone"], "answer": null}, {"question": "When under stress, I usually:", "choices": ["Stay calm", "Get anxious", "Focus harder", "Procrastinate"], "answer": null}, {"question": "I make decisions based on:", "choices": ["Logic", "Emotions", "Advice", "Gut feeling"], "answer": null}, {"question": "When faced with a problem, I tend to:", "choices": ["Act quickly", "Think it through", "Ask for advice", "Avoid it"], "answer": null}, {"question": "In group settings, I prefer to:", "choices": ["Lead the group", "Support quietly", "Observe only", "Let others decide"], "answer": null}, {"question": "I feel most productive when I:", "choices": ["Have a detailed plan", "Can be spontaneous", "Work in a team", "Work alone"], "answer": null}, {"question": "When under stress, I usually:", "choices": ["Stay calm", "Get anxious", "Focus harder", "Procrastinate"], "answer": null}, {"question": "I make decisions based on:", "choices": ["Logic", "Emotions", "Advice", "Gut feeling"], "answer": null}, {"question": "When faced with a problem, I tend to:", "choices": ["Act quickly", "Think it through", "Ask for advice", "Avoid it"], "answer": null}, {"question": "In group settings, I prefer to:", "choices": ["Lead the group", "Support quietly", "Observe only", "Let others decide"], "answer": null}, {"question": "I feel most productive when I:", "choices": ["Have a detailed plan", "Can be spontaneous", "Work in a team", "Work alone"], "answer": null}, {"question": "When under stress, I usually:", "choices": ["Stay calm", "Get anxious", "Focus harder", "Procrastinate"], "answer": null}, {"question": "I make decisions based on:", "choices": ["Logic", "Emotions", "Advice", "Gut feeling"], "answer": null}, {"question": "When faced with a problem, I tend to:", "choices": ["Act quickly", "Think it through", "Ask for advice", "Avoid it"], "answer": null}, {"question": "In group settings, I prefer to:", "choices": ["Lead the group", "Support quietly", "Observe only", "Let others decide"], "answer": null}, {"question": "I feel most productive when I:", "choices": ["Have a detailed plan", "Can be spontaneous", "Work in a team", "Work alone"], "answer": null}, {"question": "When under stress, I usually:", "choices": ["Stay calm", "Get anxious", "Focus harder", "Procrastinate"], "answer": null}, {"question": "I make decisions based on:", "choices": ["Logic", "Emotions", "Advice", "Gut feeling"], "answer": null}, {"question": "When faced with a problem, I tend to:", "choices": ["Act quickly", "Think it through", "Ask for advice", "Avoid it"], "answer": null}, {"question": "In group settings, I prefer to:", "choices": ["Lead the group", "Support quietly", "Observe only", "Let others decide"], "answer": null}, {"question": "I feel most productive when I:", "choices": ["Have a detailed plan", "Can be spontaneous", "Work in a team", "Work alone"], "answer": null}, {"question": "When under stress, I usually:", "choices": ["Stay calm", "Get anxious", "Focus harder", "Procrastinate"], "answer": null}, {"question": "I make decisions based on:", "choices": ["Logic", "Emotions", "Advice", "Gut feeling"], "answer": null}, {"question": "When faced with a problem, I tend to:", "choices": ["Act quickly", "Think it through", "Ask for advice", "Avoid it"], "answer": null}, {"question": "In group settings, I prefer to:", "choices": ["Lead the group", "Support quietly", "Observe only", "Let others decide"], "answer": null}, {"question": "I feel most productive when I:", "choices": ["Have a detailed plan", "Can be spontaneous", "Work in a team", "Work alone"], "answer": null}, {"question": "When under stress, I usually:", "choices": ["Stay calm", "Get anxious", "Focus harder", "Procrastinate"], "answer": null}, {"question": "I make decisions based on:", "choices": ["Logic", "Emotions", "Advice", "Gut feeling"], "answer": null}, {"question": "When faced with a problem, I tend to:", "choices": ["Act quickly", "Think it through", "Ask for advice", "Avoid it"], "answer": null}, {"question": "In group settings, I prefer to:", "choices": ["Lead the group", "Support quietly", "Observe only", "Let others decide"], "answer": null}, {"question": "I feel most productive when I:", "choices": ["Have a detailed plan", "Can be spontaneous", "Work in a team", "Work alone"], "answer": null}, {"question": "When under stress, I usually:", "choices": ["Stay calm", "Get anxious", "Focus harder", "Procrastinate"], "answer": null}, {"question": "I make decisions based on:", "choices": ["Logic", "Emotions", "Advice", "Gut feeling"], "answer": null}, {"question": "When faced with a problem, I tend to:", "choices": ["Act quickly", "Think it through", "Ask for advice", "Avoid it"], "answer": null}, {"question": "In group settings, I prefer to:", "choices": ["Lead the group", "Support quietly", "Observe only", "Let others decide"], "answer": null}, {"question": "I feel most productive when I:", "choices": ["Have a detailed plan", "Can be spontaneous", "Work in a team", "Work alone"], "answer": null}, {"question": "When under stress, I usually:", "choices": ["Stay calm", "Get anxious", "Focus harder", "Procrastinate"], "answer": null}, {"question": "I make decisions based on:", "choices": ["Logic", "Emotions", "Advice", "Gut feeling"], "answer": null}];
+
+let currentIndex = 0;
+let userAnswers = [];
+
+function loadQuestion(index) {
+    const q = questions[index];
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+        <div class="question">
+            <h3>Item ${index + 1} of ${questions.length}</h3>
+            <p>${q.question}</p>
+            <div class="choices">
+                ${q.choices.map(choice => `
+                    <label>
+                        <input type="radio" name="q${index}" value="${choice}" onclick="saveAnswer(${index}, '${choice}')"> ${choice}
+                    </label>
+                `).join('')}
+            </div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    `;
+}
+
+function saveAnswer(index, answer) {
+    userAnswers[index] = answer;
+}
+
+function nextQuestion() {
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        loadQuestion(currentIndex);
+    } else {
+        showSummary();
+    }
+}
+
+function showSummary() {
+    let output = "<h3>Your Responses Summary:</h3><ol>";
+    questions.forEach((q, i) => {
+        const user = userAnswers[i] || "No Answer";
+        output += `<li><strong>Q${i + 1}:</strong> ${user}</li>`;
+    });
+    output += "</ol><p><strong>This section is for self-reflection and does not have a score.</strong></p>`;
+    document.getElementById('results').innerHTML = output;
+}
+
+loadQuestion(currentIndex);
+</script>
+</body>
+</html>

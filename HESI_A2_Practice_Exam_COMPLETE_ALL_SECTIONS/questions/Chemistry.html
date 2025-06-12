@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chemistry - Practice</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h2>Chemistry - Practice Questions</h2>
+    <div id="quiz-container"></div>
+    <button onclick="showResults()">Finish Quiz</button>
+    <div id="results"></div>
+    <a href="../index.html">Back to Home</a>
+<script>
+const questions = [{"question": "What is the chemical symbol for sodium?", "choices": ["Na", "S", "N", "So"], "answer": "Na"}, {"question": "Which subatomic particle has a negative charge?", "choices": ["Electron", "Proton", "Neutron", "Nucleus"], "answer": "Electron"}, {"question": "What is the pH of a neutral substance?", "choices": ["7", "0", "14", "1"], "answer": "7"}, {"question": "What type of bond involves the sharing of electrons?", "choices": ["Covalent", "Ionic", "Hydrogen", "Metallic"], "answer": "Covalent"}, {"question": "Which gas is most abundant in Earth\u2019s atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], "answer": "Nitrogen"}, {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "S", "N", "So"], "answer": "Na"}, {"question": "Which subatomic particle has a negative charge?", "choices": ["Electron", "Proton", "Neutron", "Nucleus"], "answer": "Electron"}, {"question": "What is the pH of a neutral substance?", "choices": ["7", "0", "14", "1"], "answer": "7"}, {"question": "What type of bond involves the sharing of electrons?", "choices": ["Covalent", "Ionic", "Hydrogen", "Metallic"], "answer": "Covalent"}, {"question": "Which gas is most abundant in Earth\u2019s atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], "answer": "Nitrogen"}, {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "S", "N", "So"], "answer": "Na"}, {"question": "Which subatomic particle has a negative charge?", "choices": ["Electron", "Proton", "Neutron", "Nucleus"], "answer": "Electron"}, {"question": "What is the pH of a neutral substance?", "choices": ["7", "0", "14", "1"], "answer": "7"}, {"question": "What type of bond involves the sharing of electrons?", "choices": ["Covalent", "Ionic", "Hydrogen", "Metallic"], "answer": "Covalent"}, {"question": "Which gas is most abundant in Earth\u2019s atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], "answer": "Nitrogen"}, {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "S", "N", "So"], "answer": "Na"}, {"question": "Which subatomic particle has a negative charge?", "choices": ["Electron", "Proton", "Neutron", "Nucleus"], "answer": "Electron"}, {"question": "What is the pH of a neutral substance?", "choices": ["7", "0", "14", "1"], "answer": "7"}, {"question": "What type of bond involves the sharing of electrons?", "choices": ["Covalent", "Ionic", "Hydrogen", "Metallic"], "answer": "Covalent"}, {"question": "Which gas is most abundant in Earth\u2019s atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], "answer": "Nitrogen"}, {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "S", "N", "So"], "answer": "Na"}, {"question": "Which subatomic particle has a negative charge?", "choices": ["Electron", "Proton", "Neutron", "Nucleus"], "answer": "Electron"}, {"question": "What is the pH of a neutral substance?", "choices": ["7", "0", "14", "1"], "answer": "7"}, {"question": "What type of bond involves the sharing of electrons?", "choices": ["Covalent", "Ionic", "Hydrogen", "Metallic"], "answer": "Covalent"}, {"question": "Which gas is most abundant in Earth\u2019s atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], "answer": "Nitrogen"}, {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "S", "N", "So"], "answer": "Na"}, {"question": "Which subatomic particle has a negative charge?", "choices": ["Electron", "Proton", "Neutron", "Nucleus"], "answer": "Electron"}, {"question": "What is the pH of a neutral substance?", "choices": ["7", "0", "14", "1"], "answer": "7"}, {"question": "What type of bond involves the sharing of electrons?", "choices": ["Covalent", "Ionic", "Hydrogen", "Metallic"], "answer": "Covalent"}, {"question": "Which gas is most abundant in Earth\u2019s atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], "answer": "Nitrogen"}, {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "S", "N", "So"], "answer": "Na"}, {"question": "Which subatomic particle has a negative charge?", "choices": ["Electron", "Proton", "Neutron", "Nucleus"], "answer": "Electron"}, {"question": "What is the pH of a neutral substance?", "choices": ["7", "0", "14", "1"], "answer": "7"}, {"question": "What type of bond involves the sharing of electrons?", "choices": ["Covalent", "Ionic", "Hydrogen", "Metallic"], "answer": "Covalent"}, {"question": "Which gas is most abundant in Earth\u2019s atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], "answer": "Nitrogen"}, {"question": "What is the chemical symbol for sodium?", "choices": ["Na", "S", "N", "So"], "answer": "Na"}, {"question": "Which subatomic particle has a negative charge?", "choices": ["Electron", "Proton", "Neutron", "Nucleus"], "answer": "Electron"}, {"question": "What is the pH of a neutral substance?", "choices": ["7", "0", "14", "1"], "answer": "7"}, {"question": "What type of bond involves the sharing of electrons?", "choices": ["Covalent", "Ionic", "Hydrogen", "Metallic"], "answer": "Covalent"}, {"question": "Which gas is most abundant in Earth\u2019s atmosphere?", "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"], "answer": "Nitrogen"}];
+
+let currentIndex = 0;
+let userAnswers = [];
+
+function loadQuestion(index) {
+    const q = questions[index];
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+        <div class="question">
+            <h3>Question ${index + 1} of ${questions.length}</h3>
+            <p>${q.question}</p>
+            <div class="choices">
+                ${q.choices.map(choice => `
+                    <label>
+                        <input type="radio" name="q${index}" value="${choice}" onclick="saveAnswer(${index}, '${choice}')"> ${choice}
+                    </label>
+                `).join('')}
+            </div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    `;
+}
+
+function saveAnswer(index, answer) {
+    userAnswers[index] = answer;
+}
+
+function nextQuestion() {
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        loadQuestion(currentIndex);
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    let correct = 0;
+    let output = "<h3>Results:</h3><ul>";
+    questions.forEach((q, i) => {
+        const user = userAnswers[i] || "No Answer";
+        const correctAns = q.answer;
+        const mark = user === correctAns ? "✔" : "✘";
+        if (user === correctAns) correct++;
+        output += `<li>Q${i + 1}: Your Answer: <strong>${user}</strong> – Correct: <strong>${correctAns}</strong> ${mark}</li>`;
+    });
+    output += "</ul>";
+    output += `<p><strong>Score: ${correct} / ${questions.length}</strong></p>`;
+    document.getElementById('results').innerHTML = output;
+}
+
+loadQuestion(currentIndex);
+</script>
+</body>
+</html>

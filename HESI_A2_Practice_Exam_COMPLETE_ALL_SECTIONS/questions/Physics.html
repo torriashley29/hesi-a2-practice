@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Physics - Practice</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h2>Physics - Practice Questions</h2>
+    <div id="quiz-container"></div>
+    <button onclick="showResults()">Finish Quiz</button>
+    <div id="results"></div>
+    <a href="../index.html">Back to Home</a>
+<script>
+const questions = [{"question": "What is the unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton"}, {"question": "Which law explains why we wear seat belts?", "choices": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravity"], "answer": "Newton's First Law"}, {"question": "What is the formula for velocity?", "choices": ["Distance \u00f7 Time", "Mass \u00d7 Acceleration", "Work \u00f7 Time", "Force \u00f7 Area"], "answer": "Distance \u00f7 Time"}, {"question": "Which of the following is a vector quantity?", "choices": ["Velocity", "Mass", "Temperature", "Speed"], "answer": "Velocity"}, {"question": "What is the acceleration due to gravity on Earth?", "choices": ["9.8 m/s\u00b2", "10 m/s", "8.9 m/s", "6.5 m/s\u00b2"], "answer": "9.8 m/s\u00b2"}, {"question": "What is the unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton"}, {"question": "Which law explains why we wear seat belts?", "choices": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravity"], "answer": "Newton's First Law"}, {"question": "What is the formula for velocity?", "choices": ["Distance \u00f7 Time", "Mass \u00d7 Acceleration", "Work \u00f7 Time", "Force \u00f7 Area"], "answer": "Distance \u00f7 Time"}, {"question": "Which of the following is a vector quantity?", "choices": ["Velocity", "Mass", "Temperature", "Speed"], "answer": "Velocity"}, {"question": "What is the acceleration due to gravity on Earth?", "choices": ["9.8 m/s\u00b2", "10 m/s", "8.9 m/s", "6.5 m/s\u00b2"], "answer": "9.8 m/s\u00b2"}, {"question": "What is the unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton"}, {"question": "Which law explains why we wear seat belts?", "choices": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravity"], "answer": "Newton's First Law"}, {"question": "What is the formula for velocity?", "choices": ["Distance \u00f7 Time", "Mass \u00d7 Acceleration", "Work \u00f7 Time", "Force \u00f7 Area"], "answer": "Distance \u00f7 Time"}, {"question": "Which of the following is a vector quantity?", "choices": ["Velocity", "Mass", "Temperature", "Speed"], "answer": "Velocity"}, {"question": "What is the acceleration due to gravity on Earth?", "choices": ["9.8 m/s\u00b2", "10 m/s", "8.9 m/s", "6.5 m/s\u00b2"], "answer": "9.8 m/s\u00b2"}, {"question": "What is the unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton"}, {"question": "Which law explains why we wear seat belts?", "choices": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravity"], "answer": "Newton's First Law"}, {"question": "What is the formula for velocity?", "choices": ["Distance \u00f7 Time", "Mass \u00d7 Acceleration", "Work \u00f7 Time", "Force \u00f7 Area"], "answer": "Distance \u00f7 Time"}, {"question": "Which of the following is a vector quantity?", "choices": ["Velocity", "Mass", "Temperature", "Speed"], "answer": "Velocity"}, {"question": "What is the acceleration due to gravity on Earth?", "choices": ["9.8 m/s\u00b2", "10 m/s", "8.9 m/s", "6.5 m/s\u00b2"], "answer": "9.8 m/s\u00b2"}, {"question": "What is the unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton"}, {"question": "Which law explains why we wear seat belts?", "choices": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravity"], "answer": "Newton's First Law"}, {"question": "What is the formula for velocity?", "choices": ["Distance \u00f7 Time", "Mass \u00d7 Acceleration", "Work \u00f7 Time", "Force \u00f7 Area"], "answer": "Distance \u00f7 Time"}, {"question": "Which of the following is a vector quantity?", "choices": ["Velocity", "Mass", "Temperature", "Speed"], "answer": "Velocity"}, {"question": "What is the acceleration due to gravity on Earth?", "choices": ["9.8 m/s\u00b2", "10 m/s", "8.9 m/s", "6.5 m/s\u00b2"], "answer": "9.8 m/s\u00b2"}, {"question": "What is the unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton"}, {"question": "Which law explains why we wear seat belts?", "choices": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravity"], "answer": "Newton's First Law"}, {"question": "What is the formula for velocity?", "choices": ["Distance \u00f7 Time", "Mass \u00d7 Acceleration", "Work \u00f7 Time", "Force \u00f7 Area"], "answer": "Distance \u00f7 Time"}, {"question": "Which of the following is a vector quantity?", "choices": ["Velocity", "Mass", "Temperature", "Speed"], "answer": "Velocity"}, {"question": "What is the acceleration due to gravity on Earth?", "choices": ["9.8 m/s\u00b2", "10 m/s", "8.9 m/s", "6.5 m/s\u00b2"], "answer": "9.8 m/s\u00b2"}, {"question": "What is the unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton"}, {"question": "Which law explains why we wear seat belts?", "choices": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravity"], "answer": "Newton's First Law"}, {"question": "What is the formula for velocity?", "choices": ["Distance \u00f7 Time", "Mass \u00d7 Acceleration", "Work \u00f7 Time", "Force \u00f7 Area"], "answer": "Distance \u00f7 Time"}, {"question": "Which of the following is a vector quantity?", "choices": ["Velocity", "Mass", "Temperature", "Speed"], "answer": "Velocity"}, {"question": "What is the acceleration due to gravity on Earth?", "choices": ["9.8 m/s\u00b2", "10 m/s", "8.9 m/s", "6.5 m/s\u00b2"], "answer": "9.8 m/s\u00b2"}, {"question": "What is the unit of force?", "choices": ["Newton", "Joule", "Watt", "Pascal"], "answer": "Newton"}, {"question": "Which law explains why we wear seat belts?", "choices": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Gravity"], "answer": "Newton's First Law"}, {"question": "What is the formula for velocity?", "choices": ["Distance \u00f7 Time", "Mass \u00d7 Acceleration", "Work \u00f7 Time", "Force \u00f7 Area"], "answer": "Distance \u00f7 Time"}, {"question": "Which of the following is a vector quantity?", "choices": ["Velocity", "Mass", "Temperature", "Speed"], "answer": "Velocity"}, {"question": "What is the acceleration due to gravity on Earth?", "choices": ["9.8 m/s\u00b2", "10 m/s", "8.9 m/s", "6.5 m/s\u00b2"], "answer": "9.8 m/s\u00b2"}];
+
+let currentIndex = 0;
+let userAnswers = [];
+
+function loadQuestion(index) {
+    const q = questions[index];
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+        <div class="question">
+            <h3>Question ${index + 1} of ${questions.length}</h3>
+            <p>${q.question}</p>
+            <div class="choices">
+                ${q.choices.map(choice => `
+                    <label>
+                        <input type="radio" name="q${index}" value="${choice}" onclick="saveAnswer(${index}, '${choice}')"> ${choice}
+                    </label>
+                `).join('')}
+            </div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    `;
+}
+
+function saveAnswer(index, answer) {
+    userAnswers[index] = answer;
+}
+
+function nextQuestion() {
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        loadQuestion(currentIndex);
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    let correct = 0;
+    let output = "<h3>Results:</h3><ul>";
+    questions.forEach((q, i) => {
+        const user = userAnswers[i] || "No Answer";
+        const correctAns = q.answer;
+        const mark = user === correctAns ? "✔" : "✘";
+        if (user === correctAns) correct++;
+        output += `<li>Q${i + 1}: Your Answer: <strong>${user}</strong> – Correct: <strong>${correctAns}</strong> ${mark}</li>`;
+    });
+    output += "</ul>";
+    output += `<p><strong>Score: ${correct} / ${questions.length}</strong></p>`;
+    document.getElementById('results').innerHTML = output;
+}
+
+loadQuestion(currentIndex);
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Critical Thinking - Practice</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h2>Critical Thinking - Practice Questions</h2>
+    <div id="quiz-container"></div>
+    <button onclick="showResults()">Finish Quiz</button>
+    <div id="results"></div>
+    <a href="../index.html">Back to Home</a>
+<script>
+const questions = [{"question": "A nurse notices a patient\u2019s oxygen level is decreasing. What should the nurse do first?", "choices": ["Check airway and breathing", "Call the physician", "Document the findings", "Increase IV fluids"], "answer": "Check airway and breathing"}, {"question": "A patient is refusing medication. What is the nurse's best response?", "choices": ["Insist the patient takes it", "Document refusal and notify provider", "Ignore the refusal", "Give double dose later"], "answer": "Document refusal and notify provider"}, {"question": "Which action demonstrates prioritization?", "choices": ["Attending to a patient with shortness of breath before passing meds", "Filing papers before checking vital signs", "Taking lunch before charting", "Reading emails before assessing pain"], "answer": "Attending to a patient with shortness of breath before passing meds"}, {"question": "During shift report, a nurse receives information about four patients. Which patient should be seen first?", "choices": ["Patient with chest pain", "Patient requesting water", "Post-op patient resting", "Discharge-ready patient"], "answer": "Patient with chest pain"}, {"question": "Which critical thinking trait involves questioning assumptions?", "choices": ["Curiosity", "Arrogance", "Compliance", "Disinterest"], "answer": "Curiosity"}, {"question": "A nurse notices a patient\u2019s oxygen level is decreasing. What should the nurse do first?", "choices": ["Check airway and breathing", "Call the physician", "Document the findings", "Increase IV fluids"], "answer": "Check airway and breathing"}, {"question": "A patient is refusing medication. What is the nurse's best response?", "choices": ["Insist the patient takes it", "Document refusal and notify provider", "Ignore the refusal", "Give double dose later"], "answer": "Document refusal and notify provider"}, {"question": "Which action demonstrates prioritization?", "choices": ["Attending to a patient with shortness of breath before passing meds", "Filing papers before checking vital signs", "Taking lunch before charting", "Reading emails before assessing pain"], "answer": "Attending to a patient with shortness of breath before passing meds"}, {"question": "During shift report, a nurse receives information about four patients. Which patient should be seen first?", "choices": ["Patient with chest pain", "Patient requesting water", "Post-op patient resting", "Discharge-ready patient"], "answer": "Patient with chest pain"}, {"question": "Which critical thinking trait involves questioning assumptions?", "choices": ["Curiosity", "Arrogance", "Compliance", "Disinterest"], "answer": "Curiosity"}, {"question": "A nurse notices a patient\u2019s oxygen level is decreasing. What should the nurse do first?", "choices": ["Check airway and breathing", "Call the physician", "Document the findings", "Increase IV fluids"], "answer": "Check airway and breathing"}, {"question": "A patient is refusing medication. What is the nurse's best response?", "choices": ["Insist the patient takes it", "Document refusal and notify provider", "Ignore the refusal", "Give double dose later"], "answer": "Document refusal and notify provider"}, {"question": "Which action demonstrates prioritization?", "choices": ["Attending to a patient with shortness of breath before passing meds", "Filing papers before checking vital signs", "Taking lunch before charting", "Reading emails before assessing pain"], "answer": "Attending to a patient with shortness of breath before passing meds"}, {"question": "During shift report, a nurse receives information about four patients. Which patient should be seen first?", "choices": ["Patient with chest pain", "Patient requesting water", "Post-op patient resting", "Discharge-ready patient"], "answer": "Patient with chest pain"}, {"question": "Which critical thinking trait involves questioning assumptions?", "choices": ["Curiosity", "Arrogance", "Compliance", "Disinterest"], "answer": "Curiosity"}, {"question": "A nurse notices a patient\u2019s oxygen level is decreasing. What should the nurse do first?", "choices": ["Check airway and breathing", "Call the physician", "Document the findings", "Increase IV fluids"], "answer": "Check airway and breathing"}, {"question": "A patient is refusing medication. What is the nurse's best response?", "choices": ["Insist the patient takes it", "Document refusal and notify provider", "Ignore the refusal", "Give double dose later"], "answer": "Document refusal and notify provider"}, {"question": "Which action demonstrates prioritization?", "choices": ["Attending to a patient with shortness of breath before passing meds", "Filing papers before checking vital signs", "Taking lunch before charting", "Reading emails before assessing pain"], "answer": "Attending to a patient with shortness of breath before passing meds"}, {"question": "During shift report, a nurse receives information about four patients. Which patient should be seen first?", "choices": ["Patient with chest pain", "Patient requesting water", "Post-op patient resting", "Discharge-ready patient"], "answer": "Patient with chest pain"}, {"question": "Which critical thinking trait involves questioning assumptions?", "choices": ["Curiosity", "Arrogance", "Compliance", "Disinterest"], "answer": "Curiosity"}, {"question": "A nurse notices a patient\u2019s oxygen level is decreasing. What should the nurse do first?", "choices": ["Check airway and breathing", "Call the physician", "Document the findings", "Increase IV fluids"], "answer": "Check airway and breathing"}, {"question": "A patient is refusing medication. What is the nurse's best response?", "choices": ["Insist the patient takes it", "Document refusal and notify provider", "Ignore the refusal", "Give double dose later"], "answer": "Document refusal and notify provider"}, {"question": "Which action demonstrates prioritization?", "choices": ["Attending to a patient with shortness of breath before passing meds", "Filing papers before checking vital signs", "Taking lunch before charting", "Reading emails before assessing pain"], "answer": "Attending to a patient with shortness of breath before passing meds"}, {"question": "During shift report, a nurse receives information about four patients. Which patient should be seen first?", "choices": ["Patient with chest pain", "Patient requesting water", "Post-op patient resting", "Discharge-ready patient"], "answer": "Patient with chest pain"}, {"question": "Which critical thinking trait involves questioning assumptions?", "choices": ["Curiosity", "Arrogance", "Compliance", "Disinterest"], "answer": "Curiosity"}, {"question": "A nurse notices a patient\u2019s oxygen level is decreasing. What should the nurse do first?", "choices": ["Check airway and breathing", "Call the physician", "Document the findings", "Increase IV fluids"], "answer": "Check airway and breathing"}, {"question": "A patient is refusing medication. What is the nurse's best response?", "choices": ["Insist the patient takes it", "Document refusal and notify provider", "Ignore the refusal", "Give double dose later"], "answer": "Document refusal and notify provider"}, {"question": "Which action demonstrates prioritization?", "choices": ["Attending to a patient with shortness of breath before passing meds", "Filing papers before checking vital signs", "Taking lunch before charting", "Reading emails before assessing pain"], "answer": "Attending to a patient with shortness of breath before passing meds"}, {"question": "During shift report, a nurse receives information about four patients. Which patient should be seen first?", "choices": ["Patient with chest pain", "Patient requesting water", "Post-op patient resting", "Discharge-ready patient"], "answer": "Patient with chest pain"}, {"question": "Which critical thinking trait involves questioning assumptions?", "choices": ["Curiosity", "Arrogance", "Compliance", "Disinterest"], "answer": "Curiosity"}, {"question": "A nurse notices a patient\u2019s oxygen level is decreasing. What should the nurse do first?", "choices": ["Check airway and breathing", "Call the physician", "Document the findings", "Increase IV fluids"], "answer": "Check airway and breathing"}, {"question": "A patient is refusing medication. What is the nurse's best response?", "choices": ["Insist the patient takes it", "Document refusal and notify provider", "Ignore the refusal", "Give double dose later"], "answer": "Document refusal and notify provider"}, {"question": "Which action demonstrates prioritization?", "choices": ["Attending to a patient with shortness of breath before passing meds", "Filing papers before checking vital signs", "Taking lunch before charting", "Reading emails before assessing pain"], "answer": "Attending to a patient with shortness of breath before passing meds"}, {"question": "During shift report, a nurse receives information about four patients. Which patient should be seen first?", "choices": ["Patient with chest pain", "Patient requesting water", "Post-op patient resting", "Discharge-ready patient"], "answer": "Patient with chest pain"}, {"question": "Which critical thinking trait involves questioning assumptions?", "choices": ["Curiosity", "Arrogance", "Compliance", "Disinterest"], "answer": "Curiosity"}, {"question": "A nurse notices a patient\u2019s oxygen level is decreasing. What should the nurse do first?", "choices": ["Check airway and breathing", "Call the physician", "Document the findings", "Increase IV fluids"], "answer": "Check airway and breathing"}, {"question": "A patient is refusing medication. What is the nurse's best response?", "choices": ["Insist the patient takes it", "Document refusal and notify provider", "Ignore the refusal", "Give double dose later"], "answer": "Document refusal and notify provider"}, {"question": "Which action demonstrates prioritization?", "choices": ["Attending to a patient with shortness of breath before passing meds", "Filing papers before checking vital signs", "Taking lunch before charting", "Reading emails before assessing pain"], "answer": "Attending to a patient with shortness of breath before passing meds"}, {"question": "During shift report, a nurse receives information about four patients. Which patient should be seen first?", "choices": ["Patient with chest pain", "Patient requesting water", "Post-op patient resting", "Discharge-ready patient"], "answer": "Patient with chest pain"}, {"question": "Which critical thinking trait involves questioning assumptions?", "choices": ["Curiosity", "Arrogance", "Compliance", "Disinterest"], "answer": "Curiosity"}];
+
+let currentIndex = 0;
+let userAnswers = [];
+
+function loadQuestion(index) {
+    const q = questions[index];
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+        <div class="question">
+            <h3>Question ${index + 1} of ${questions.length}</h3>
+            <p>${q.question}</p>
+            <div class="choices">
+                ${q.choices.map(choice => `
+                    <label>
+                        <input type="radio" name="q${index}" value="${choice}" onclick="saveAnswer(${index}, '${choice}')"> ${choice}
+                    </label>
+                `).join('')}
+            </div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    `;
+}
+
+function saveAnswer(index, answer) {
+    userAnswers[index] = answer;
+}
+
+function nextQuestion() {
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        loadQuestion(currentIndex);
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    let correct = 0;
+    let output = "<h3>Results:</h3><ul>";
+    questions.forEach((q, i) => {
+        const user = userAnswers[i] || "No Answer";
+        const correctAns = q.answer;
+        const mark = user === correctAns ? "✔" : "✘";
+        if (user === correctAns) correct++;
+        output += `<li>Q${i + 1}: Your Answer: <strong>${user}</strong> – Correct: <strong>${correctAns}</strong> ${mark}</li>`;
+    });
+    output += "</ul>";
+    output += `<p><strong>Score: ${correct} / ${questions.length}</strong></p>`;
+    document.getElementById('results').innerHTML = output;
+}
+
+loadQuestion(currentIndex);
+</script>
+</body>
+</html>

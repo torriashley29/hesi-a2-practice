@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biology - Practice</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h2>Biology - Practice Questions</h2>
+    <div id="quiz-container"></div>
+    <button onclick="showResults()">Finish Quiz</button>
+    <div id="results"></div>
+    <a href="../index.html">Back to Home</a>
+<script>
+const questions = [{"question": "What is the basic unit of life?", "choices": ["Cell", "Atom", "Tissue", "Organ"], "answer": "Cell"}, {"question": "Which organelle is responsible for energy production?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"], "answer": "Mitochondria"}, {"question": "Which macromolecule is the main source of energy?", "choices": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"], "answer": "Carbohydrates"}, {"question": "What process do plants use to convert sunlight into food?", "choices": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"], "answer": "Photosynthesis"}, {"question": "What type of cell lacks a nucleus?", "choices": ["Prokaryote", "Eukaryote", "Animal cell", "Plant cell"], "answer": "Prokaryote"}, {"question": "What is the basic unit of life?", "choices": ["Cell", "Atom", "Tissue", "Organ"], "answer": "Cell"}, {"question": "Which organelle is responsible for energy production?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"], "answer": "Mitochondria"}, {"question": "Which macromolecule is the main source of energy?", "choices": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"], "answer": "Carbohydrates"}, {"question": "What process do plants use to convert sunlight into food?", "choices": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"], "answer": "Photosynthesis"}, {"question": "What type of cell lacks a nucleus?", "choices": ["Prokaryote", "Eukaryote", "Animal cell", "Plant cell"], "answer": "Prokaryote"}, {"question": "What is the basic unit of life?", "choices": ["Cell", "Atom", "Tissue", "Organ"], "answer": "Cell"}, {"question": "Which organelle is responsible for energy production?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"], "answer": "Mitochondria"}, {"question": "Which macromolecule is the main source of energy?", "choices": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"], "answer": "Carbohydrates"}, {"question": "What process do plants use to convert sunlight into food?", "choices": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"], "answer": "Photosynthesis"}, {"question": "What type of cell lacks a nucleus?", "choices": ["Prokaryote", "Eukaryote", "Animal cell", "Plant cell"], "answer": "Prokaryote"}, {"question": "What is the basic unit of life?", "choices": ["Cell", "Atom", "Tissue", "Organ"], "answer": "Cell"}, {"question": "Which organelle is responsible for energy production?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"], "answer": "Mitochondria"}, {"question": "Which macromolecule is the main source of energy?", "choices": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"], "answer": "Carbohydrates"}, {"question": "What process do plants use to convert sunlight into food?", "choices": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"], "answer": "Photosynthesis"}, {"question": "What type of cell lacks a nucleus?", "choices": ["Prokaryote", "Eukaryote", "Animal cell", "Plant cell"], "answer": "Prokaryote"}, {"question": "What is the basic unit of life?", "choices": ["Cell", "Atom", "Tissue", "Organ"], "answer": "Cell"}, {"question": "Which organelle is responsible for energy production?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"], "answer": "Mitochondria"}, {"question": "Which macromolecule is the main source of energy?", "choices": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"], "answer": "Carbohydrates"}, {"question": "What process do plants use to convert sunlight into food?", "choices": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"], "answer": "Photosynthesis"}, {"question": "What type of cell lacks a nucleus?", "choices": ["Prokaryote", "Eukaryote", "Animal cell", "Plant cell"], "answer": "Prokaryote"}, {"question": "What is the basic unit of life?", "choices": ["Cell", "Atom", "Tissue", "Organ"], "answer": "Cell"}, {"question": "Which organelle is responsible for energy production?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"], "answer": "Mitochondria"}, {"question": "Which macromolecule is the main source of energy?", "choices": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"], "answer": "Carbohydrates"}, {"question": "What process do plants use to convert sunlight into food?", "choices": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"], "answer": "Photosynthesis"}, {"question": "What type of cell lacks a nucleus?", "choices": ["Prokaryote", "Eukaryote", "Animal cell", "Plant cell"], "answer": "Prokaryote"}, {"question": "What is the basic unit of life?", "choices": ["Cell", "Atom", "Tissue", "Organ"], "answer": "Cell"}, {"question": "Which organelle is responsible for energy production?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"], "answer": "Mitochondria"}, {"question": "Which macromolecule is the main source of energy?", "choices": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"], "answer": "Carbohydrates"}, {"question": "What process do plants use to convert sunlight into food?", "choices": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"], "answer": "Photosynthesis"}, {"question": "What type of cell lacks a nucleus?", "choices": ["Prokaryote", "Eukaryote", "Animal cell", "Plant cell"], "answer": "Prokaryote"}, {"question": "What is the basic unit of life?", "choices": ["Cell", "Atom", "Tissue", "Organ"], "answer": "Cell"}, {"question": "Which organelle is responsible for energy production?", "choices": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"], "answer": "Mitochondria"}, {"question": "Which macromolecule is the main source of energy?", "choices": ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"], "answer": "Carbohydrates"}, {"question": "What process do plants use to convert sunlight into food?", "choices": ["Photosynthesis", "Respiration", "Digestion", "Fermentation"], "answer": "Photosynthesis"}, {"question": "What type of cell lacks a nucleus?", "choices": ["Prokaryote", "Eukaryote", "Animal cell", "Plant cell"], "answer": "Prokaryote"}];
+
+let currentIndex = 0;
+let userAnswers = [];
+
+function loadQuestion(index) {
+    const q = questions[index];
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+        <div class="question">
+            <h3>Question ${index + 1} of ${questions.length}</h3>
+            <p>${q.question}</p>
+            <div class="choices">
+                ${q.choices.map(choice => `
+                    <label>
+                        <input type="radio" name="q${index}" value="${choice}" onclick="saveAnswer(${index}, '${choice}')"> ${choice}
+                    </label>
+                `).join('')}
+            </div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    `;
+}
+
+function saveAnswer(index, answer) {
+    userAnswers[index] = answer;
+}
+
+function nextQuestion() {
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        loadQuestion(currentIndex);
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    let correct = 0;
+    let output = "<h3>Results:</h3><ul>";
+    questions.forEach((q, i) => {
+        const user = userAnswers[i] || "No Answer";
+        const correctAns = q.answer;
+        const mark = user === correctAns ? "✔" : "✘";
+        if (user === correctAns) correct++;
+        output += `<li>Q${i + 1}: Your Answer: <strong>${user}</strong> – Correct: <strong>${correctAns}</strong> ${mark}</li>`;
+    });
+    output += "</ul>";
+    output += `<p><strong>Score: ${correct} / ${questions.length}</strong></p>`;
+    document.getElementById('results').innerHTML = output;
+}
+
+loadQuestion(currentIndex);
+</script>
+</body>
+</html>

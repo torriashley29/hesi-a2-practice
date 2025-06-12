@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grammar - Practice</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h2>Grammar - Practice Questions</h2>
+    <div id="quiz-container"></div>
+    <button onclick="showResults()">Finish Quiz</button>
+    <div id="results"></div>
+    <a href="../index.html">Back to Home</a>
+<script>
+const questions = [{"question": "Choose the sentence with correct grammar:", "choices": ["She don\u2019t like pizza.", "She doesn\u2019t like pizza.", "She not like pizza.", "She didn\u2019t liked pizza."], "answer": "She doesn\u2019t like pizza."}, {"question": "Identify the correct form: 'Neither of the answers ___ correct.'", "choices": ["are", "were", "is", "be"], "answer": "is"}, {"question": "Which word is a preposition?", "choices": ["Run", "Happy", "Under", "Blue"], "answer": "Under"}, {"question": "Which sentence is in passive voice?", "choices": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The ball chases the dog."], "answer": "The ball was chased by the dog."}, {"question": "Choose the correct word: 'The medicine had an immediate ___ on the patient.'", "choices": ["effect", "affect", "effact", "affict"], "answer": "effect"}, {"question": "Choose the sentence with correct grammar:", "choices": ["She don\u2019t like pizza.", "She doesn\u2019t like pizza.", "She not like pizza.", "She didn\u2019t liked pizza."], "answer": "She doesn\u2019t like pizza."}, {"question": "Identify the correct form: 'Neither of the answers ___ correct.'", "choices": ["are", "were", "is", "be"], "answer": "is"}, {"question": "Which word is a preposition?", "choices": ["Run", "Happy", "Under", "Blue"], "answer": "Under"}, {"question": "Which sentence is in passive voice?", "choices": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The ball chases the dog."], "answer": "The ball was chased by the dog."}, {"question": "Choose the correct word: 'The medicine had an immediate ___ on the patient.'", "choices": ["effect", "affect", "effact", "affict"], "answer": "effect"}, {"question": "Choose the sentence with correct grammar:", "choices": ["She don\u2019t like pizza.", "She doesn\u2019t like pizza.", "She not like pizza.", "She didn\u2019t liked pizza."], "answer": "She doesn\u2019t like pizza."}, {"question": "Identify the correct form: 'Neither of the answers ___ correct.'", "choices": ["are", "were", "is", "be"], "answer": "is"}, {"question": "Which word is a preposition?", "choices": ["Run", "Happy", "Under", "Blue"], "answer": "Under"}, {"question": "Which sentence is in passive voice?", "choices": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The ball chases the dog."], "answer": "The ball was chased by the dog."}, {"question": "Choose the correct word: 'The medicine had an immediate ___ on the patient.'", "choices": ["effect", "affect", "effact", "affict"], "answer": "effect"}, {"question": "Choose the sentence with correct grammar:", "choices": ["She don\u2019t like pizza.", "She doesn\u2019t like pizza.", "She not like pizza.", "She didn\u2019t liked pizza."], "answer": "She doesn\u2019t like pizza."}, {"question": "Identify the correct form: 'Neither of the answers ___ correct.'", "choices": ["are", "were", "is", "be"], "answer": "is"}, {"question": "Which word is a preposition?", "choices": ["Run", "Happy", "Under", "Blue"], "answer": "Under"}, {"question": "Which sentence is in passive voice?", "choices": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The ball chases the dog."], "answer": "The ball was chased by the dog."}, {"question": "Choose the correct word: 'The medicine had an immediate ___ on the patient.'", "choices": ["effect", "affect", "effact", "affict"], "answer": "effect"}, {"question": "Choose the sentence with correct grammar:", "choices": ["She don\u2019t like pizza.", "She doesn\u2019t like pizza.", "She not like pizza.", "She didn\u2019t liked pizza."], "answer": "She doesn\u2019t like pizza."}, {"question": "Identify the correct form: 'Neither of the answers ___ correct.'", "choices": ["are", "were", "is", "be"], "answer": "is"}, {"question": "Which word is a preposition?", "choices": ["Run", "Happy", "Under", "Blue"], "answer": "Under"}, {"question": "Which sentence is in passive voice?", "choices": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The ball chases the dog."], "answer": "The ball was chased by the dog."}, {"question": "Choose the correct word: 'The medicine had an immediate ___ on the patient.'", "choices": ["effect", "affect", "effact", "affict"], "answer": "effect"}, {"question": "Choose the sentence with correct grammar:", "choices": ["She don\u2019t like pizza.", "She doesn\u2019t like pizza.", "She not like pizza.", "She didn\u2019t liked pizza."], "answer": "She doesn\u2019t like pizza."}, {"question": "Identify the correct form: 'Neither of the answers ___ correct.'", "choices": ["are", "were", "is", "be"], "answer": "is"}, {"question": "Which word is a preposition?", "choices": ["Run", "Happy", "Under", "Blue"], "answer": "Under"}, {"question": "Which sentence is in passive voice?", "choices": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The ball chases the dog."], "answer": "The ball was chased by the dog."}, {"question": "Choose the correct word: 'The medicine had an immediate ___ on the patient.'", "choices": ["effect", "affect", "effact", "affict"], "answer": "effect"}, {"question": "Choose the sentence with correct grammar:", "choices": ["She don\u2019t like pizza.", "She doesn\u2019t like pizza.", "She not like pizza.", "She didn\u2019t liked pizza."], "answer": "She doesn\u2019t like pizza."}, {"question": "Identify the correct form: 'Neither of the answers ___ correct.'", "choices": ["are", "were", "is", "be"], "answer": "is"}, {"question": "Which word is a preposition?", "choices": ["Run", "Happy", "Under", "Blue"], "answer": "Under"}, {"question": "Which sentence is in passive voice?", "choices": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The ball chases the dog."], "answer": "The ball was chased by the dog."}, {"question": "Choose the correct word: 'The medicine had an immediate ___ on the patient.'", "choices": ["effect", "affect", "effact", "affict"], "answer": "effect"}, {"question": "Choose the sentence with correct grammar:", "choices": ["She don\u2019t like pizza.", "She doesn\u2019t like pizza.", "She not like pizza.", "She didn\u2019t liked pizza."], "answer": "She doesn\u2019t like pizza."}, {"question": "Identify the correct form: 'Neither of the answers ___ correct.'", "choices": ["are", "were", "is", "be"], "answer": "is"}, {"question": "Which word is a preposition?", "choices": ["Run", "Happy", "Under", "Blue"], "answer": "Under"}, {"question": "Which sentence is in passive voice?", "choices": ["The dog chased the ball.", "The ball was chased by the dog.", "The dog is chasing the ball.", "The ball chases the dog."], "answer": "The ball was chased by the dog."}, {"question": "Choose the correct word: 'The medicine had an immediate ___ on the patient.'", "choices": ["effect", "affect", "effact", "affict"], "answer": "effect"}];
+
+let currentIndex = 0;
+let userAnswers = [];
+
+function loadQuestion(index) {
+    const q = questions[index];
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+        <div class="question">
+            <h3>Question ${index + 1} of ${questions.length}</h3>
+            <p>${q.question}</p>
+            <div class="choices">
+                ${q.choices.map(choice => `
+                    <label>
+                        <input type="radio" name="q${index}" value="${choice}" onclick="saveAnswer(${index}, '${choice}')"> ${choice}
+                    </label>
+                `).join('')}
+            </div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    `;
+}
+
+function saveAnswer(index, answer) {
+    userAnswers[index] = answer;
+}
+
+function nextQuestion() {
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        loadQuestion(currentIndex);
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    let correct = 0;
+    let output = "<h3>Results:</h3><ul>";
+    questions.forEach((q, i) => {
+        const user = userAnswers[i] || "No Answer";
+        const correctAns = q.answer;
+        const mark = user === correctAns ? "✔" : "✘";
+        if (user === correctAns) correct++;
+        output += `<li>Q${i + 1}: Your Answer: <strong>${user}</strong> – Correct: <strong>${correctAns}</strong> ${mark}</li>`;
+    });
+    output += "</ul>";
+    output += `<p><strong>Score: ${correct} / ${questions.length}</strong></p>`;
+    document.getElementById('results').innerHTML = output;
+}
+
+loadQuestion(currentIndex);
+</script>
+</body>
+</html>

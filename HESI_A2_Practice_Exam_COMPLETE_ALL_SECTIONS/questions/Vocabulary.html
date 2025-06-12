@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabulary - Practice</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h2>Vocabulary - Practice Questions</h2>
+    <div id="quiz-container"></div>
+    <button onclick="showResults()">Finish Quiz</button>
+    <div id="results"></div>
+    <a href="../index.html">Back to Home</a>
+<script>
+const questions = [{"question": "What is the best synonym for 'benevolent'?", "choices": ["Kind", "Mean", "Angry", "Lazy"], "answer": "Kind"}, {"question": "What does 'abstain' mean?", "choices": ["To refrain", "To indulge", "To increase", "To decrease"], "answer": "To refrain"}, {"question": "Which word is most opposite in meaning to 'opaque'?", "choices": ["Clear", "Dull", "Dark", "Bright"], "answer": "Clear"}, {"question": "The word 'vital' most nearly means:", "choices": ["Essential", "Unimportant", "Optional", "Weak"], "answer": "Essential"}, {"question": "Which word means 'to worsen'?", "choices": ["Exacerbate", "Alleviate", "Clarify", "Elevate"], "answer": "Exacerbate"}, {"question": "What is the best synonym for 'benevolent'?", "choices": ["Kind", "Mean", "Angry", "Lazy"], "answer": "Kind"}, {"question": "What does 'abstain' mean?", "choices": ["To refrain", "To indulge", "To increase", "To decrease"], "answer": "To refrain"}, {"question": "Which word is most opposite in meaning to 'opaque'?", "choices": ["Clear", "Dull", "Dark", "Bright"], "answer": "Clear"}, {"question": "The word 'vital' most nearly means:", "choices": ["Essential", "Unimportant", "Optional", "Weak"], "answer": "Essential"}, {"question": "Which word means 'to worsen'?", "choices": ["Exacerbate", "Alleviate", "Clarify", "Elevate"], "answer": "Exacerbate"}, {"question": "What is the best synonym for 'benevolent'?", "choices": ["Kind", "Mean", "Angry", "Lazy"], "answer": "Kind"}, {"question": "What does 'abstain' mean?", "choices": ["To refrain", "To indulge", "To increase", "To decrease"], "answer": "To refrain"}, {"question": "Which word is most opposite in meaning to 'opaque'?", "choices": ["Clear", "Dull", "Dark", "Bright"], "answer": "Clear"}, {"question": "The word 'vital' most nearly means:", "choices": ["Essential", "Unimportant", "Optional", "Weak"], "answer": "Essential"}, {"question": "Which word means 'to worsen'?", "choices": ["Exacerbate", "Alleviate", "Clarify", "Elevate"], "answer": "Exacerbate"}, {"question": "What is the best synonym for 'benevolent'?", "choices": ["Kind", "Mean", "Angry", "Lazy"], "answer": "Kind"}, {"question": "What does 'abstain' mean?", "choices": ["To refrain", "To indulge", "To increase", "To decrease"], "answer": "To refrain"}, {"question": "Which word is most opposite in meaning to 'opaque'?", "choices": ["Clear", "Dull", "Dark", "Bright"], "answer": "Clear"}, {"question": "The word 'vital' most nearly means:", "choices": ["Essential", "Unimportant", "Optional", "Weak"], "answer": "Essential"}, {"question": "Which word means 'to worsen'?", "choices": ["Exacerbate", "Alleviate", "Clarify", "Elevate"], "answer": "Exacerbate"}, {"question": "What is the best synonym for 'benevolent'?", "choices": ["Kind", "Mean", "Angry", "Lazy"], "answer": "Kind"}, {"question": "What does 'abstain' mean?", "choices": ["To refrain", "To indulge", "To increase", "To decrease"], "answer": "To refrain"}, {"question": "Which word is most opposite in meaning to 'opaque'?", "choices": ["Clear", "Dull", "Dark", "Bright"], "answer": "Clear"}, {"question": "The word 'vital' most nearly means:", "choices": ["Essential", "Unimportant", "Optional", "Weak"], "answer": "Essential"}, {"question": "Which word means 'to worsen'?", "choices": ["Exacerbate", "Alleviate", "Clarify", "Elevate"], "answer": "Exacerbate"}, {"question": "What is the best synonym for 'benevolent'?", "choices": ["Kind", "Mean", "Angry", "Lazy"], "answer": "Kind"}, {"question": "What does 'abstain' mean?", "choices": ["To refrain", "To indulge", "To increase", "To decrease"], "answer": "To refrain"}, {"question": "Which word is most opposite in meaning to 'opaque'?", "choices": ["Clear", "Dull", "Dark", "Bright"], "answer": "Clear"}, {"question": "The word 'vital' most nearly means:", "choices": ["Essential", "Unimportant", "Optional", "Weak"], "answer": "Essential"}, {"question": "Which word means 'to worsen'?", "choices": ["Exacerbate", "Alleviate", "Clarify", "Elevate"], "answer": "Exacerbate"}, {"question": "What is the best synonym for 'benevolent'?", "choices": ["Kind", "Mean", "Angry", "Lazy"], "answer": "Kind"}, {"question": "What does 'abstain' mean?", "choices": ["To refrain", "To indulge", "To increase", "To decrease"], "answer": "To refrain"}, {"question": "Which word is most opposite in meaning to 'opaque'?", "choices": ["Clear", "Dull", "Dark", "Bright"], "answer": "Clear"}, {"question": "The word 'vital' most nearly means:", "choices": ["Essential", "Unimportant", "Optional", "Weak"], "answer": "Essential"}, {"question": "Which word means 'to worsen'?", "choices": ["Exacerbate", "Alleviate", "Clarify", "Elevate"], "answer": "Exacerbate"}, {"question": "What is the best synonym for 'benevolent'?", "choices": ["Kind", "Mean", "Angry", "Lazy"], "answer": "Kind"}, {"question": "What does 'abstain' mean?", "choices": ["To refrain", "To indulge", "To increase", "To decrease"], "answer": "To refrain"}, {"question": "Which word is most opposite in meaning to 'opaque'?", "choices": ["Clear", "Dull", "Dark", "Bright"], "answer": "Clear"}, {"question": "The word 'vital' most nearly means:", "choices": ["Essential", "Unimportant", "Optional", "Weak"], "answer": "Essential"}, {"question": "Which word means 'to worsen'?", "choices": ["Exacerbate", "Alleviate", "Clarify", "Elevate"], "answer": "Exacerbate"}];
+
+let currentIndex = 0;
+let userAnswers = [];
+
+function loadQuestion(index) {
+    const q = questions[index];
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = `
+        <div class="question">
+            <h3>Question ${index + 1} of ${questions.length}</h3>
+            <p>${q.question}</p>
+            <div class="choices">
+                ${q.choices.map(choice => `
+                    <label>
+                        <input type="radio" name="q${index}" value="${choice}" onclick="saveAnswer(${index}, '${choice}')"> ${choice}
+                    </label>
+                `).join('')}
+            </div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    `;
+}
+
+function saveAnswer(index, answer) {
+    userAnswers[index] = answer;
+}
+
+function nextQuestion() {
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        loadQuestion(currentIndex);
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    let correct = 0;
+    let output = "<h3>Results:</h3><ul>";
+    questions.forEach((q, i) => {
+        const user = userAnswers[i] || "No Answer";
+        const correctAns = q.answer;
+        const mark = user === correctAns ? "✔" : "✘";
+        if (user === correctAns) correct++;
+        output += `<li>Q${i + 1}: Your Answer: <strong>${user}</strong> – Correct: <strong>${correctAns}</strong> ${mark}</li>`;
+    });
+    output += "</ul>";
+    output += `<p><strong>Score: ${correct} / ${questions.length}</strong></p>`;
+    document.getElementById('results').innerHTML = output;
+}
+
+loadQuestion(currentIndex);
+</script>
+</body>
+</html>
